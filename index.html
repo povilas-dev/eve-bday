@@ -505,6 +505,62 @@
           </video>
         </div>
       </div>
+             <p class="message">Skanių 27-ųjų metų!</p>
+
+       <div class="carousel-container">
+        <div class="carousel" id="carousel2">
+          <button class="carousel-nav prev" onclick="prevImage2()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-nav next" onclick="nextImage2()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczMIhPCC-T6ORHOzgA_VzKqEG5ucpiBzR1Mafn35HqGtE79x5zYSlryPwtkt4QvmGcwruWMbrUcDgpFnRRP_oEZPIBgw0wLi1c3z9vs20L8QM_RsmrvspIml0Pm2G293a47kF-WFC7P734FBhD_oXDCm7A=w1029-h1372-s-no?authuser=0"
+            class="active"
+            alt="Memory 1"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczPUC9itv3drlu07k7xJM6CmqcoXMUb_KNXj_E5Yc_4A_BkdzwtDhvOSdl3n1Ymm7LGUPhb8x1or88yK0CLw-P_TD-h4zwYcR2lI8sPZzuEbn3Uduw0sxUZOErE1-uVC_uHZb196t6wJBF-D87YWP0rXTQ=w1029-h1372-s-no?authuser=0"
+            alt="Memory 2"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczP-Cnpqw2xhEK6bq4UNCDbplXMyXedLxl88a8epGO5IrNQY0DZti5H2xScWiB8MJbXUXITdA7lxQK3edmWJzGrqDi7LVOgZ3LG7D9-gPjioTc6ljDdkfZ3O4iezwC9HZ9tjzb991hLWnscNaVpr9D-cXg=w1029-h1372-s-no?authuser=0"
+            alt="Memory 3"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczPYxIGojoY3WliYTlAYjCyUk16eRlUDB5ukvd54bRJKTNHrzTq3Xvk88Vk9lTE_UKZ1VaGhnMKZK3OKJNmv_nN1sQc9XRlDscmAAsn_pkTSPa8HEChGkUrGEdAZyw4JUPBFfOz3RaSuJLb-ovwxWqs4GQ=w1029-h1372-s-no?authuser=0"
+            alt="Memory 4"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczPhtn_fm0Ubr9q9v8rxWr45fNPEcrvDiRKmgQ6_7X1gTdxuoU-NT4-oi1IX5V1ouL1K-sMlBitLoN9eeBNP74x0ChJmUVv_saD-OFwklBxXmO-CCjLl29WxgGSJst538zNDwZ8BCgawPAgQ8fkIM6GBew=w1029-h1372-s-no?authuser=0"
+            alt="Memory 5"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczP3qpmlDW79Y2dEpzzOuY74NSQWbXyKwgxpAj4VKrnBZNz8IO-D8E33vmxt_SqxEUKf75bzIGDwUmSHrW64GzxFUKr0UFPwykCWXGDa-iBJZOOKxBYv3F8PpOuRxQKowNSx5f5aEs7PKRfzqxwcjZVgrw=w1029-h1372-s-no?authuser=0"
+            alt="Memory 6"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczMZh2VQGXqopk6deVZ5427TygEmYTaVC3c5nfZzROiwtCFrN5W-JUM3nWe5Q0uiGb6qr-zhs__YblN1ysbzlY6qgsOh3rTlnJ_Fs_54F9eYRk12Db7W5CceVm5asnQuV2o1-U6O7GyWg9GEMueAzSmchg=w849-h1132-s-no?authuser=0"
+            alt="Memory 7"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczPcQ_GPuz8eRFe4XfLW6uQLE4OG0XnJ5x7-BHxjwXe2P0lR-4NbIYK675nDXPsWyOKrKqBcOIfzyUtQjREoqE0GApMNskkr7rapqH5KWQ_B_kg0r5xO8nGTzRB5DxzSEujDKPD0zwpHSnkSZbuVAbywmw=w849-h1132-s-no?authuser=0"
+            alt="Memory 8"
+          />
+        </div>
+
+        <div class="carousel-indicators" id="indicators2">
+          <div class="indicator active" onclick="goToImage2(0)"></div>
+          <div class="indicator" onclick="goToImage2(1)"></div>
+          <div class="indicator" onclick="goToImage2(2)"></div>
+          <div class="indicator" onclick="goToImage2(3)"></div>
+          <div class="indicator" onclick="goToImage2(4)"></div>
+          <div class="indicator" onclick="goToImage2(5)"></div>
+          <div class="indicator" onclick="goToImage2(6)"></div>
+          <div class="indicator" onclick="goToImage2(7)"></div>
+        </div>
+      </div>
     </div>
 
     <!-- <audio id="birthdayMusic" loop>
@@ -514,10 +570,12 @@
 
     <script>
       let currentImage = 0;
+      let currentImage2 = 0;
       let confettiEnabled = true;
       let musicEnabled = false;
       let autoCarousel = true;
       let carouselInterval;
+      let carouselInterval2;
 
       function startCelebration() {
         const introElement = document.getElementById('intro');
@@ -528,6 +586,7 @@
           document.getElementById('controls').style.display = 'block';
           startFloatingHearts();
           startAutoCarousel();
+          startAutoCarousel2();
           // Uncomment if you have background music
           // document.getElementById('birthdayMusic').play();
         }, 800);
@@ -585,6 +644,59 @@
         indicators[currentImage].classList.add('active');
       }
 
+      // Second carousel functions
+      function startAutoCarousel2() {
+        if (carouselInterval2) clearInterval(carouselInterval2);
+        carouselInterval2 = setInterval(() => {
+          if (
+            autoCarousel &&
+            document.getElementById('mainContent').style.display !== 'none'
+          ) {
+            nextImage2();
+          }
+        }, 5000);
+      }
+
+      function nextImage2() {
+        const images = document.querySelectorAll('#carousel2 img');
+        const indicators = document.querySelectorAll('#indicators2 .indicator');
+
+        images[currentImage2].classList.remove('active');
+        indicators[currentImage2].classList.remove('active');
+
+        currentImage2 = (currentImage2 + 1) % images.length;
+
+        images[currentImage2].classList.add('active');
+        indicators[currentImage2].classList.add('active');
+      }
+
+      function prevImage2() {
+        const images = document.querySelectorAll('#carousel2 img');
+        const indicators = document.querySelectorAll('#indicators2 .indicator');
+
+        images[currentImage2].classList.remove('active');
+        indicators[currentImage2].classList.remove('active');
+
+        currentImage2 =
+          currentImage2 === 0 ? images.length - 1 : currentImage2 - 1;
+
+        images[currentImage2].classList.add('active');
+        indicators[currentImage2].classList.add('active');
+      }
+
+      function goToImage2(index) {
+        const images = document.querySelectorAll('#carousel2 img');
+        const indicators = document.querySelectorAll('#indicators2 .indicator');
+
+        images[currentImage2].classList.remove('active');
+        indicators[currentImage2].classList.remove('active');
+
+        currentImage2 = index;
+
+        images[currentImage2].classList.add('active');
+        indicators[currentImage2].classList.add('active');
+      }
+
       // Touch/swipe support for carousel
       let startX = 0;
       let endX = 0;
@@ -599,6 +711,19 @@
         endX = e.changedTouches[0].clientX;
         if (startX - endX > 50) nextImage();
         if (endX - startX > 50) prevImage();
+      });
+
+      // Touch/swipe support for second carousel
+      document
+        .getElementById('carousel2')
+        .addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        });
+
+      document.getElementById('carousel2').addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) nextImage2();
+        if (endX - startX > 50) prevImage2();
       });
 
       // Confetti effect (enhanced)
