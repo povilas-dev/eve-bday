@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #ffe6f0;
+        font-family: 'Baloo 2', cursive;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      .intro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffe6f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1000;
+      }
+
+      .intro h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 2rem;
+        color: #ff3399;
+        margin-bottom: 1rem;
+      }
+
+      .intro button {
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 10px;
+        background-color: #ff3399;
+        color: white;
+        cursor: pointer;
+        font-family: 'Baloo 2', cursive;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        font-family: 'Pacifico', cursive;
+        font-size: 2.5rem;
+        color: #ff3399;
+        margin-top: 1rem;
+      }
+
+      .carousel {
+        margin: 2rem auto;
+        width: 90%;
+        max-width: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .carousel img {
+        width: 100%;
+        display: none;
+      }
+
+      .carousel img.active {
+        display: block;
+      }
+
+      audio {
+        display: none;
+      }
+
+      .confetti {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+        z-index: 999;
+      }
+
+      .main-content {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="intro" id="intro">
+      <h1>Click here to open your present! 🎉</h1>
+      <button onclick="startCelebration()">Open</button>
+    </div>
+
+    <div class="main-content" id="mainContent">
+      <canvas class="confetti"></canvas>
+      <h1>Happy Birthday! 🎉</h1>
+      <div class="carousel">
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczNBPAF4piRdZqJbBG7hUj4Jl9g1oDBK51iFXYUbBW_jPImGMw5KvFClun7Mlekc1xObTKWqxRr7MZl8SEraMtTwsF-lRCVnSj0y_Zrg8RHAgU79bLfLE_3Pvz0Bb0sRpvzmgrE8IV3m76Nlu1tYxMGO5g=w2544-h1696-s-no?authuser=0"
+          class="active"
+          alt="Birthday Memory 1"
+        />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMD9CK0_A54EZ8PrG61CVcG_k_d2NqdFOcAW1QZfCoNbiBG886y-oRQWe4s2rhfLR2hETKaSPNXcA4dr5g7Pgry81kGjMEJi6pjoY8ulhbmvId7p26phT3UkknKfqfc42zJJOC6VfV8AFYNHjQUkIbpJQ=w2544-h1696-s-no?authuser=0" alt="Birthday Memory 2" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNiXEHoIkHWQjsFuB5hJ_T9Ck3G_Lbz99RsjcynK3Yvw9Zowzmx58dv2EdmaDw7n0iCrQqysklrBQWEvYtz_J6PEQIGAlirUAtaAhZjXWzCL4pf_t1CdaMJYw-qoShiVhQrp3q4ZMrdmFVvrlLuQB_itQ=w1014-h1352-s-no-gm?authuser=0" alt="Birthday Memory 3" />
+      </div>
+      <!-- <audio id="birthdayMusic" loop>
+        <source src="birthday_song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio> -->
+    </div>
+
+    <script>
+      function startCelebration() {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        document.getElementById('birthdayMusic').play();
+      }
+
+      // Image carousel logic
+      const images = document.querySelectorAll('.carousel img');
+      let current = 0;
+      setInterval(() => {
+        if (
+          images.length === 0 ||
+          document.getElementById('mainContent').style.display === 'none'
+        )
+          return;
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+      }, 3000);
+
+      // Confetti effect
+      const confettiCanvas = document.querySelector('.confetti');
+      const ctx = confettiCanvas.getContext('2d');
+      let width, height;
+      let confetti = [];
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        confettiCanvas.width = width;
+        confettiCanvas.height = height;
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+
+      function randomColor() {
+        const colors = ['#ff3399', '#33ccff', '#ffcc00', '#66ff66', '#ff9966'];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      function createConfettiPiece() {
+        return {
+          x: Math.random() * width,
+          y: Math.random() * -height,
+          r: Math.random() * 6 + 4,
+          color: randomColor(),
+          speed: Math.random() * 3 + 2,
+          drift: Math.random() * 1 - 0.5,
+        };
+      }
+
+      for (let i = 0; i < 150; i++) confetti.push(createConfettiPiece());
+
+      function drawConfetti() {
+        ctx.clearRect(0, 0, width, height);
+        confetti.forEach((c) => {
+          ctx.beginPath();
+          ctx.arc(c.x, c.y, c.r, 0, 2 * Math.PI);
+          ctx.fillStyle = c.color;
+          ctx.fill();
+        });
+        updateConfetti();
+        requestAnimationFrame(drawConfetti);
+      }
+
+      function updateConfetti() {
+        confetti.forEach((c) => {
+          c.y += c.speed;
+          c.x += c.drift;
+          if (c.y > height) {
+            c.y = -10;
+            c.x = Math.random() * width;
+          }
+        });
+      }
+
+      drawConfetti();
+    </script>
+  </body>
+</html>
