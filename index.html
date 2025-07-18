@@ -443,7 +443,7 @@
       <h1>Su gimtadieniu Evelyne!!! 🎉</h1>
 
       <div class="carousel-container">
-        <div class="carousel" id="carousel">
+        <div class="carousel" id="carousel1">
           <button class="carousel-nav prev" onclick="prevImage()">
             <i class="fas fa-chevron-left"></i>
           </button>
@@ -482,7 +482,7 @@
       <div class="videos-container">
         <div class="video-wrapper">
           <video width="320" controls>
-            <source src="1.MOV" type="video/mp4" />
+            <source src="hp_video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -605,7 +605,7 @@
       }
 
       function nextImage() {
-        const images = document.querySelectorAll('.carousel img');
+        const images = document.querySelectorAll('#carousel1 img');
         const indicators = document.querySelectorAll('.indicator');
 
         images[currentImage].classList.remove('active');
@@ -618,7 +618,7 @@
       }
 
       function prevImage() {
-        const images = document.querySelectorAll('.carousel img');
+        const images = document.querySelectorAll('#carousel1 img');
         const indicators = document.querySelectorAll('.indicator');
 
         images[currentImage].classList.remove('active');
@@ -632,7 +632,7 @@
       }
 
       function goToImage(index) {
-        const images = document.querySelectorAll('.carousel img');
+        const images = document.querySelectorAll('#carousel1 img');
         const indicators = document.querySelectorAll('.indicator');
 
         images[currentImage].classList.remove('active');
