@@ -443,7 +443,7 @@
       <h1>Su gimtadieniu Evelyne!!! 🎉</h1>
 
       <div class="carousel-container">
-        <div class="carousel" id="carousel1">
+        <div class="carousel" id="carousel">
           <button class="carousel-nav prev" onclick="prevImage()">
             <i class="fas fa-chevron-left"></i>
           </button>
@@ -605,8 +605,8 @@
       }
 
       function nextImage() {
-        const images = document.querySelectorAll('#carousel1 img');
-        const indicators = document.querySelectorAll('.indicator');
+        const images = document.querySelectorAll('#carousel img');
+        const indicators = document.querySelectorAll('#indicators .indicator');
 
         images[currentImage].classList.remove('active');
         indicators[currentImage].classList.remove('active');
@@ -618,8 +618,8 @@
       }
 
       function prevImage() {
-        const images = document.querySelectorAll('#carousel1 img');
-        const indicators = document.querySelectorAll('.indicator');
+        const images = document.querySelectorAll('#carousel img');
+        const indicators = document.querySelectorAll('#indicators .indicator');
 
         images[currentImage].classList.remove('active');
         indicators[currentImage].classList.remove('active');
@@ -632,7 +632,7 @@
       }
 
       function goToImage(index) {
-        const images = document.querySelectorAll('#carousel1 img');
+        const images = document.querySelectorAll('.carousel img');
         const indicators = document.querySelectorAll('.indicator');
 
         images[currentImage].classList.remove('active');
