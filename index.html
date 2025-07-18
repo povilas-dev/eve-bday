@@ -24,7 +24,12 @@
       body {
         margin: 0;
         padding: 0;
-        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+        background: linear-gradient(
+          135deg,
+          #ff9a9e 0%,
+          #fecfef 50%,
+          #fecfef 100%
+        );
         font-family: 'Baloo 2', cursive;
         text-align: center;
         overflow-x: hidden;
@@ -50,15 +55,20 @@
       }
 
       @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       .intro.hidden {
         visibility: hidden;
         opacity: 0;
-        transform: scale(0.8);
         transition: all 0.8s ease;
       }
 
@@ -67,7 +77,7 @@
         font-size: clamp(3rem, 8vw, 8rem);
         color: white;
         margin-bottom: 1rem;
-        text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         animation: bounce 2s infinite;
         cursor: pointer;
         transition: transform 0.3s ease;
@@ -86,9 +96,19 @@
       }
 
       @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-20px); }
-        60% { transform: translateY(-10px); }
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-20px);
+        }
+        60% {
+          transform: translateY(-10px);
+        }
       }
 
       @keyframes fadeInUp {
@@ -107,7 +127,7 @@
         font-size: clamp(2rem, 5vw, 3rem);
         color: #ff3399;
         margin: 2rem 0 1rem 0;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         animation: slideInFromTop 1s ease;
       }
 
@@ -144,15 +164,17 @@
       .carousel {
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         position: relative;
-        background: white;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .carousel img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
         display: none;
         transition: all 0.5s ease;
       }
@@ -163,8 +185,12 @@
       }
 
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
 
       .carousel-nav {
@@ -225,7 +251,7 @@
         color: #cc0066;
         margin: 2rem 0;
         font-family: 'Pacifico', cursive;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         animation: slideInFromRight 1s ease 0.6s both;
       }
 
@@ -258,9 +284,15 @@
         animation: slideInFromBottom 1s ease both;
       }
 
-      .video-wrapper:nth-child(1) { animation-delay: 0.9s; }
-      .video-wrapper:nth-child(2) { animation-delay: 1.2s; }
-      .video-wrapper:nth-child(3) { animation-delay: 1.5s; }
+      .video-wrapper:nth-child(1) {
+        animation-delay: 0.9s;
+      }
+      .video-wrapper:nth-child(2) {
+        animation-delay: 1.2s;
+      }
+      .video-wrapper:nth-child(3) {
+        animation-delay: 1.5s;
+      }
 
       @keyframes slideInFromBottom {
         from {
@@ -348,7 +380,7 @@
         font-size: 1.2rem;
         color: #ff3399;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
 
       .control-btn:hover {
@@ -370,8 +402,8 @@
           max-width: 320px;
         }
 
-        .carousel img {
-          height: 300px;
+        .carousel {
+          height: 65vh;
         }
       }
 
@@ -380,8 +412,8 @@
           font-size: 4rem;
         }
 
-        .carousel img {
-          height: 250px;
+        .carousel {
+          height: 60vh;
         }
 
         .video-wrapper video {
@@ -419,17 +451,21 @@
             <i class="fas fa-chevron-right"></i>
           </button>
           <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczPB-MFmmpE2aCYojTMEvdIYD3XitWzSu7w6ckzQZ4vikKm6-EzbXnzOflkzYyyHeAwRvTeZ8yTopUIL0GvRc6uIjojywOEXMmRwR-fgPPInRy362q9lDrOpXG8C6Qun5CbLCaL4njvKN3m9Ixuaj-QgKQ=w2058-h1372-s-no?authuser=0"
-          class="active"
-          alt="Birthday Memory 1"
-        />
+            src="https://lh3.googleusercontent.com/pw/AP1GczPB-MFmmpE2aCYojTMEvdIYD3XitWzSu7w6ckzQZ4vikKm6-EzbXnzOflkzYyyHeAwRvTeZ8yTopUIL0GvRc6uIjojywOEXMmRwR-fgPPInRy362q9lDrOpXG8C6Qun5CbLCaL4njvKN3m9Ixuaj-QgKQ=w2058-h1372-s-no?authuser=0"
+            class="active"
+            alt="Birthday Memory 1"
+          />
           <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczMD9CK0_A54EZ8PrG61CVcG_k_d2NqdFOcAW1QZfCoNbiBG886y-oRQWe4s2rhfLR2hETKaSPNXcA4dr5g7Pgry81kGjMEJi6pjoY8ulhbmvId7p26phT3UkknKfqfc42zJJOC6VfV8AFYNHjQUkIbpJQ=w2544-h1696-s-no?authuser=0"
+            src="https://lh3.googleusercontent.com/pw/AP1GczORH8k9WU6IaFSiGIoIMWOvwGPjvLY24luB52B54OKCLgZXt3uhAJizgYhdMW9wn7LXQxOTl6COLe4BR0Ncgcce5CoQ2Hr9sdbF_WhCO9RktS5fFhPcSzlMymgz-eseu3v3dz91GI4i08mOAufg488uaQ=w1029-h1372-s-no?authuser=0"
             alt="Birthday Memory 2"
           />
           <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNiXEHoIkHWQjsFuB5hJ_T9Ck3G_Lbz99RsjcynK3Yvw9Zowzmx58dv2EdmaDw7n0iCrQqysklrBQWEvYtz_J6PEQIGAlirUAtaAhZjXWzCL4pf_t1CdaMJYw-qoShiVhQrp3q4ZMrdmFVvrlLuQB_itQ=w1014-h1352-s-no-gm?authuser=0"
+            src="https://lh3.googleusercontent.com/pw/AP1GczMD9CK0_A54EZ8PrG61CVcG_k_d2NqdFOcAW1QZfCoNbiBG886y-oRQWe4s2rhfLR2hETKaSPNXcA4dr5g7Pgry81kGjMEJi6pjoY8ulhbmvId7p26phT3UkknKfqfc42zJJOC6VfV8AFYNHjQUkIbpJQ=w2544-h1696-s-no?authuser=0"
             alt="Birthday Memory 3"
+          />
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczNiXEHoIkHWQjsFuB5hJ_T9Ck3G_Lbz99RsjcynK3Yvw9Zowzmx58dv2EdmaDw7n0iCrQqysklrBQWEvYtz_J6PEQIGAlirUAtaAhZjXWzCL4pf_t1CdaMJYw-qoShiVhQrp3q4ZMrdmFVvrlLuQB_itQ=w1014-h1352-s-no-gm?authuser=0"
+            alt="Birthday Memory 4"
           />
         </div>
 
@@ -437,12 +473,11 @@
           <div class="indicator active" onclick="goToImage(0)"></div>
           <div class="indicator" onclick="goToImage(1)"></div>
           <div class="indicator" onclick="goToImage(2)"></div>
+          <div class="indicator" onclick="goToImage(3)"></div>
         </div>
       </div>
 
-      <p class="message">
-        Video sveikinimai apačioje 👇
-      </p>
+      <p class="message">Video sveikinimai apačioje 👇</p>
 
       <div class="videos-container">
         <div class="video-wrapper">
@@ -495,7 +530,10 @@
       function startAutoCarousel() {
         if (carouselInterval) clearInterval(carouselInterval);
         carouselInterval = setInterval(() => {
-          if (autoCarousel && document.getElementById('mainContent').style.display !== 'none') {
+          if (
+            autoCarousel &&
+            document.getElementById('mainContent').style.display !== 'none'
+          ) {
             nextImage();
           }
         }, 4000);
@@ -521,7 +559,8 @@
         images[currentImage].classList.remove('active');
         indicators[currentImage].classList.remove('active');
 
-        currentImage = currentImage === 0 ? images.length - 1 : currentImage - 1;
+        currentImage =
+          currentImage === 0 ? images.length - 1 : currentImage - 1;
 
         images[currentImage].classList.add('active');
         indicators[currentImage].classList.add('active');
@@ -544,11 +583,13 @@
       let startX = 0;
       let endX = 0;
 
-      document.getElementById('carousel').addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-      });
+      document
+        .getElementById('carousel')
+        .addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        });
 
-      document.getElementById('carousel').addEventListener('touchend', e => {
+      document.getElementById('carousel').addEventListener('touchend', (e) => {
         endX = e.changedTouches[0].clientX;
         if (startX - endX > 50) nextImage();
         if (endX - startX > 50) prevImage();
@@ -571,7 +612,15 @@
       resize();
 
       function randomColor() {
-        const colors = ['#ff3399', '#33ccff', '#ffcc00', '#66ff66', '#ff9966', '#ff69b4', '#9966ff'];
+        const colors = [
+          '#ff3399',
+          '#33ccff',
+          '#ffcc00',
+          '#66ff66',
+          '#ff9966',
+          '#ff69b4',
+          '#9966ff',
+        ];
         return colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -637,8 +686,8 @@
         heart.className = 'heart';
         heart.innerHTML = Math.random() > 0.5 ? '🥳' : '🎉';
         heart.style.left = Math.random() * 100 + '%';
-        heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-        heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+        heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+        heart.style.fontSize = Math.random() * 10 + 15 + 'px';
 
         document.getElementById('floatingHearts').appendChild(heart);
 
@@ -672,9 +721,10 @@
 
       // Keyboard controls
       document.addEventListener('keydown', (e) => {
-        if (document.getElementById('mainContent').style.display === 'none') return;
+        if (document.getElementById('mainContent').style.display === 'none')
+          return;
 
-        switch(e.key) {
+        switch (e.key) {
           case 'ArrowLeft':
             prevImage();
             break;
