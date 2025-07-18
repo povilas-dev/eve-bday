@@ -18,7 +18,7 @@
       body {
         margin: 0;
         padding: 0;
-        background: #ffe6f0;
+        background: #e4f9e6;
         font-family: 'Baloo 2', cursive;
         text-align: center;
         overflow-x: hidden;
@@ -30,12 +30,19 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: #ffe6f0;
+        background-color: #fff1f6;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         z-index: 1000;
+        opacity: 1;
+      }
+
+      .intro.hidden {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 0.2s, opacity 0.2s linear;
       }
 
       .intro h1 {
@@ -108,16 +115,6 @@
   <body>
     <div class="intro" id="intro">
       <h1 onclick="startCelebration()">🎁</h1>
-      <p
-        style="
-          font-size: 2rem;
-          color: #cc0066;
-          margin-top: 2rem;
-          font-family: 'Pacifico', cursive;
-        "
-      >
-        Atidaryk
-      </p>
     </div>
 
     <div class="main-content" id="mainContent">
@@ -183,7 +180,8 @@
 
     <script>
       function startCelebration() {
-        document.getElementById('intro').style.display = 'none';
+        const introElement = document.getElementById('intro');
+        introElement.className = `${introElement.className} hidden`;
         document.getElementById('mainContent').style.display = 'block';
         document.getElementById('birthdayMusic').play();
       }
@@ -234,7 +232,7 @@
         };
       }
 
-      for (let i = 0; i < 150; i++) confetti.push(createConfettiPiece());
+      for (let i = 0; i < 100; i++) confetti.push(createConfettiPiece());
 
       function drawConfetti() {
         ctx.clearRect(0, 0, width, height);
